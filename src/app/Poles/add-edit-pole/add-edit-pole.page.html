@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>EPIMS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div style="margin: 10px;">
+      <p style="color: black;"> <b> {{formTitle}} </b></p>
+    </div>
+    
+     <form>
+        <ion-list lines="full" class="ion-no-margin ion-no-padding">
+          <ion-item>
+            <ion-label position="stacked">Pole Type <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required type="text" name="poletype" [(ngModel)]="poletype"></ion-input> <!-- oninput="handleFirstNameValue(event)" -->
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Manufacturer</ion-label>
+            <ion-input required type="text" name="manufacturer" [(ngModel)]="manufacturer" ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Price </ion-label>
+            <ion-input required type="text" name="price" [(ngModel)]="price"></ion-input>
+          </ion-item>
+        </ion-list>
+
+        <div class="ion-padding">
+          <ion-button expand="block" type="button" class="ion-no-margin" (click)="processForm()">Submit</ion-button>
+        </div>
+      </form>
+
+</ion-content>

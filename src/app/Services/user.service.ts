@@ -29,4 +29,20 @@ export class UserService {
     let apiUrl = this.baseurl + 'api/Users';
     return this.http.get(apiUrl,httpOptions).pipe(map(res => JSON.parse(JSON.stringify(res))));
   }
+
+  login(email: string, password: string): Observable<Usermodel>{
+    let apiUrl = this.baseurl + 'api/Login?email='+email+'&password='+password;
+    return this.http.get(apiUrl,httpOptions).pipe(map(res => JSON.parse(JSON.stringify(res))));
+  }
+
+  updateUser(id: number, user: Usermodel):Observable<any>{
+    let apiUrl = this.baseurl + 'api/Users/'+id;//+'&users='+user;
+    return this.http.put(apiUrl,user,httpOptions).pipe(map(res => JSON.parse(JSON.stringify(res))));
+  }
+
+  deleteUser(userId: number){
+    let apiUrl = this.baseurl + 'api/Users/'+userId;//+'&users='+user;
+    return this.http.delete(apiUrl,httpOptions).pipe(map(res => JSON.parse(JSON.stringify(res))));
+  }
+
 }

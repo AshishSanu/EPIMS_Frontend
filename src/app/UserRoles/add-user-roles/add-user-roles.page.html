@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>EPIMS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h4 style="text-align: center;">Add New User Role</h4>
+  <form>
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+      <ion-item>
+        <ion-label position="stacked">New User Role <ion-text color="danger">*</ion-text></ion-label>
+        <ion-input required type="text" name="password" [(ngModel)]="userRole"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button expand="block" type="button" class="ion-no-margin" (click)="processForm()">Add New Role</ion-button>
+    </div>
+  </form>
+</ion-content>

@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>EPIMS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content  [scrollEvents]="true">
+
+  <div id="container"><br>
+    <p style="color: black;"> <b> Edit User </b></p>
+     <form>
+        <ion-list lines="full" class="ion-no-margin ion-no-padding">
+          <ion-item>
+            <ion-label position="stacked">First Name <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required type="text" name="firstName" [(ngModel)]="firstName"></ion-input> <!-- oninput="handleFirstNameValue(event)" -->
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Middle Name</ion-label>
+            <ion-input required type="text" name="middleName" [(ngModel)]="middleName" ></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Last Name </ion-label>
+            <ion-input required type="text" name="lastName" [(ngModel)]="lastName"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Date of Birth <ion-text color="danger">*</ion-text></ion-label>
+            <ion-datetime required type="text" name="dob" [(ngModel)]="dob"></ion-datetime>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Mobile <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required type="text" name="mobile" [(ngModel)]="mobile"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Email <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required type="text" name="email" [(ngModel)]="email"></ion-input>
+          </ion-item>
+          <ion-list>
+            <ion-item>
+              <ion-label>Role</ion-label>
+              <ion-select name="roleId" value="roles.ID"  [(ngModel)]="roleId" multiple="false" >
+                <ion-select-option *ngFor="let roles of userRoles" value="{{roles.id}}">{{roles.userCode}}</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </ion-list>
+          <ion-item>
+            <ion-label position="stacked" >Address <ion-text color="danger">*</ion-text></ion-label>
+            <ion-textarea name="address" [(ngModel)]="address"></ion-textarea>
+          </ion-item>
+        
+        </ion-list>
+
+        <div class="ion-padding">
+          <ion-button expand="block" type="button" class="ion-no-margin" (click)="update()">Update</ion-button>
+        </div>
+      </form>
+  </div>
+
+</ion-content>

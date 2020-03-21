@@ -22,6 +22,38 @@ const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
+  },
+  {
+    path: 'user-roles',
+    loadChildren: () => import('./UserRoles/user-roles/user-roles.module').then( m => m.UserRolesPageModule)
+  },
+  {
+    path: 'add-user-roles',
+    loadChildren: () => import('./UserRoles/add-user-roles/add-user-roles.module').then( m => m.AddUserRolesPageModule)
+  },
+  {
+    path: 'add-user',
+    loadChildren: () => import('./Users/add-user/add-user.module').then( m => m.AddUserPageModule)
+  },
+  {
+    path: 'user',
+    loadChildren: () => import('./Users/user/user.module').then( m => m.UserPageModule)
+  },
+  {
+    path: 'edit-user',
+    loadChildren: () => import('./Users/edit-user/edit-user.module').then( m => m.EditUserPageModule)
+  },
+  {
+    path: 'view-poles',
+    loadChildren: () => import('./Poles/view-poles/view-poles.module').then( m => m.ViewPolesPageModule)
+  },
+  {
+    path: 'add-edit-pole',
+    loadChildren: () => import('./Poles/add-edit-pole/add-edit-pole.module').then( m => m.AddEditPolePageModule)
+  },
+  {
+    path: 'view-work-details',
+    loadChildren: () => import('./Work/view-work-details/view-work-details.module').then( m => m.ViewWorkDetailsPageModule)
   }
 ];
 

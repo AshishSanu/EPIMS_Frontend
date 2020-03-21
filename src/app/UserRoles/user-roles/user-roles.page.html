@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>EPIMS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+    <ion-grid style="margin-left: 5px;">
+      <ion-row>
+        <ion-col routerLink="/add-user-roles" routerDirection="root">
+          <ion-card text-center padding style="height: 100px; background-color: #3399ff; color: white; text-align: center; height: 35px; margin: 0px; padding: 0px;">
+            <p>Add User Roles</p>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <h4 style="text-align: center;">User Roles</h4>
+      <ion-row style="text-align: left; ">
+        <ion-col><b>ID</b></ion-col>
+        <ion-col><b>User Role</b></ion-col>
+        <ion-col><b>Delete</b></ion-col>
+      </ion-row>
+      <ion-row *ngFor="let data of userRoles" style="text-align: left;">
+        <ion-col>
+          {{data.id}}
+        </ion-col>
+        <ion-col>
+          {{data.userCode}}
+        </ion-col>
+        <ion-col (click)="delete(data)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+</ion-content>

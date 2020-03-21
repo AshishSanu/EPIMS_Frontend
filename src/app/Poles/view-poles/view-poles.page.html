@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>EPIMS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row>
+    <ion-col>
+      <h1 style="margin: 10px;">Poles</h1>
+    </ion-col>
+    <ion-col (click)="addPole()" routerDirection="root">
+      <ion-card text-center padding style=" background-color: #3399ff; color: white; text-align: center; height: 40px; margin: 5px; padding: 0px;">
+        <p>Add Pole</p>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+  
+  <button></button>
+  <ion-card *ngFor="let obj of poles">
+    <ion-card-header>
+      <ion-card-title>Pole Type : {{obj.poletype}}
+        <span style="float: right; margin: 5px;" (click)="delete(obj)"><ion-icon name="trash-outline"></ion-icon></span>
+        <span style="float: right; margin: 5px;" (click)="edit(obj)"><ion-icon name="reader-outline"></ion-icon></span>
+      </ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-row>
+        <ion-col> Manufacturer   </ion-col>
+        <ion-col>:    {{obj.manufacturer}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col> Price</ion-col>
+        <ion-col>:    {{obj.price}}</ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
